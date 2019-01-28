@@ -198,7 +198,7 @@ def curl_version3(data):
 
 def send_status_to_hipchat(message,color):
     room_id_real = "3900"
-    auth_token_real = "HckWIBs6MIAl3RMprkF4uTnkJ3hFxjzuDAk4i6ue"
+    auth_token_real = "YLrql28g98EVrrHPQTrkhkvzPogC7GmLlTZT7MOB"
     url = 'https://hipchat.bestbuy.com/v2/room/3900/notification'
     headers = {
         "content-type": "application/json",
@@ -208,7 +208,7 @@ def send_status_to_hipchat(message,color):
         'color': color,
         'message_format': 'text',
         'notify': False,
-        'from': 'jenkins'})
+        'from': 'From Jenkins'})
     request = requests.post(url, headers=headers, data=datastr)
     print (request.text)
     print ("posted to hipchat", message, color)
@@ -223,9 +223,9 @@ for each in east_applicationversion:
                 print (each['name'], (curl_version(each['url'])))
             else:
                 # print ("versions are not same")
-                print (each['name'] + "east version is" + (curl_version(each['url'])) + "and west version is" + (curl_version(each1['url'])))
+                print (each['name'] + " east version is " + (curl_version(each['url'])) + " and west version is " + (curl_version(each1['url'])))
                 count += 1
-                send_status_to_hipchat(each['name'] + "east version is" + (curl_version(each['url'])) + "and west version is" + (curl_version(each1['url'])), "red")
+                send_status_to_hipchat(each['name'] + " east version is " + (curl_version(each['url'])) + " and west version is " + (curl_version(each1['url'])), "red")
 #         else:
 #             # print ("apps are not same")
 #             # print ((curl_version(each['url'])), (curl_version(each1['url'])), each['name'], each1['name'])
@@ -237,9 +237,9 @@ for each in east_version:
                 print (each['name'], (curl_version2(each['url'])))
             else:
                 # print ("versions are not same")
-                print (each['name'] + "east version is" + (curl_version2(each['url'])) + "and west version is" + (curl_version2(each1['url'])))
+                print (each['name'] + " east version is " + (curl_version2(each['url'])) + " and west version is " + (curl_version2(each1['url'])))
                 count += 1
-                send_status_to_hipchat(each['name'] + "east version is" + (curl_version2(each['url'])) + "and west version is" + (curl_version2(each1['url'])), "red")
+                send_status_to_hipchat(each['name'] + " east version is " + (curl_version2(each['url'])) + " and west version is " + (curl_version2(each1['url'])), "red")
         # else:
             # print ("apps are not same")
             # print ((curl_version(each['url'])), (curl_version(each1['url'])), each['name'], each1['name'])
@@ -251,10 +251,10 @@ for each in east_Version:
                 print (each['name'], (curl_version3(each['url'])))
             else:
                 # print ("versions are not same")
-                print (each['name'] + "east version is" + (curl_version(each['url'])) + "and west version is" + (curl_version(each1['url'])))
+                print (each['name'] + " east version is " + (curl_version(each['url'])) + " and west version is " + (curl_version(each1['url'])))
                 count += 1
-                send_status_to_hipchat(each['name'] + "east version is" + (curl_version3(each['url'])) + "and west version is" + (curl_version3(each1['url'])), "red")
+                send_status_to_hipchat(each['name'] + " east version is " + (curl_version3(each['url'])) + " and west version is " + (curl_version3(each1['url'])), "red")
 
 
 if count == 0:
-    send_status_to_hipchat("all apps vers are consistent","green")
+    send_status_to_hipchat("All Application versions are consistent in East and West","green")
