@@ -42,7 +42,7 @@ east_applicationversion = [
 { 'name': 'NhanceView-njs', 'url': 'pe-non-nhancview-njs-active-int/heartbeat' },
 { 'name': 'Browse NodeJs', 'url': 'pe-browse-nodejs-active-int/heartbeat' },
 { 'name': 'Bundle and save app', 'url': 'pe-non-ofrsvapi-app-active-int/heartbeat' },
-{ 'name': 'Pisces(Orville)', 'url': 'pe-browse-orville-active-ext/heartbeat' },
+{ 'name': 'Pisces(Orville)', 'url': 'pe-non-orville-app-active-ext/heartbeat' },
  { 'name': 'Pixie App', 'url': 'pe-non-pixie-app-active-int/heartbeat' },
 { 'name': 'PLP View Njs', 'url': 'pe-non-plpview-njs-active-int/heartbeat' },
 { 'name': 'Price View Njs', 'url': 'pe-bro-priceview-njs-active-int/heartbeat' },
@@ -73,7 +73,12 @@ east_applicationversion = [
 { 'name': 'Visitor Graph', 'url': 'pe-bro-vgraph-api-active-int/heartbeat' },
 { 'name': 'UCR', 'url': 'pe-non-usrclasres-app-active-int/heartbeat' },
 { 'name': 'ZK Agent', 'url': 'pe-bro-zkagent-svc-active-int/zk-agent/heartbeat' },
- { 'name': 'Pricing-Services-Aggregator', 'url': 'pe-non-priceragg-app-active-ext/heartbeat' }
+{ 'name': 'Pricing-Services-Aggregator', 'url': 'pe-non-priceragg-app-active-ext/heartbeat' },
+{ 'name': 'CSI', 'url': 'pe-csi-web-active-ext/api/csiservice/heartbeat'},
+{ 'name': 'Customer-Graph', 'url': 'pe-rpi-cgraph-app-active-int/heartbeat'},
+{ 'name': 'Purchase Finder', 'url': 'pe-non-prchsfndr-app-active-ext/heartbeat'},
+{ 'name': 'Psychic App', 'url': 'pe-non-psychic-app-active-int/heartbeat'},
+{ 'name': 'RNRView App', 'url': 'pe-non-rnrview-njs-active-int/heartbeat'}
             ]
 
 east_version = [
@@ -133,7 +138,7 @@ west_applicationversion = [
     { 'name': 'Service Interceptor(Naif)', 'url': 'pw-non-naifweb-app-active-int/heartbeat' },
     { 'name': 'NhanceView-njs', 'url': 'pw-non-nhancview-njs-active-int/heartbeat' },
     { 'name': 'Browse NodeJs', 'url': 'pw-browse-nodejs-active-int/heartbeat' },
-    { 'name': 'Pisces(Orville)', 'url': 'pw-browse-orville-active-ext/heartbeat' },
+    { 'name': 'Pisces(Orville)', 'url': 'pw-non-orville-app-active-ext/heartbeat' },
     { 'name': 'PLP View Njs', 'url': 'pw-non-plpview-njs-active-int/heartbeat' },
     { 'name': 'SCDS-API', 'url': 'pw-bro-scds-api-active-int/heartbeat' },
     { 'name': 'Psychic-app', 'url': 'pw-non-psychic-app-active-int/heartbeat' },
@@ -163,6 +168,12 @@ west_applicationversion = [
     { 'name': 'Visitor Graph', 'url': 'pw-bro-vgraph-api-active-int/heartbeat' },
     { 'name': 'ZK Agent', 'url': 'pw-bro-zkagent-svc-active-int/zk-agent/heartbeat' },
     { 'name': 'Product Fulfillment(Profulfil)', 'url': 'pw-bro-profulfil-web-active-ext/productfulfillment/heartbeat' },
+    { 'name': 'CSI', 'url': 'pw-csi-web-active-ext/api/csiservice/heartbeat'},
+    { 'name': 'Customer-Graph', 'url': 'pw-rpi-cgraph-app-active-int/heartbeat'},
+    { 'name': 'Purchase Finder', 'url': 'pw-non-prchsfndr-app-active-ext/heartbeat'},
+    { 'name': 'Psychic App', 'url': 'pw-non-psychic-app-active-int/heartbeat'},
+    { 'name': 'RNRView App', 'url': 'pw-non-rnrview-njs-active-int/heartbeat'}
+
     ]
 
 west_version = [
@@ -257,4 +268,5 @@ for each in east_Version:
 
 
 if count == 0:
+    print ("all good")
     send_status_to_hipchat("All Application versions are consistent in East and West","green")
