@@ -100,7 +100,7 @@ east_applicationversion = [
 { 'name': 'UCR', 'url': 'pe-non-usrclasres-app-active-int/heartbeat' },
 { 'name': 'ZK Agent', 'url': 'pe-bro-zkagent-svc-active-int/zk-agent/heartbeat' },
 { 'name': 'Pricing-Services-Aggregator', 'url': 'pe-non-priceragg-app-active-ext/heartbeat' },
-{ 'name': 'CSI', 'url': 'pe-csi-web-active-ext/api/csiservice/heartbeat'},
+#{ 'name': 'CSI', 'url': 'pe-csi-web-active-ext/api/csiservice/heartbeat'},
 { 'name': 'Customer-Graph', 'url': 'pe-rpi-cgraph-app-active-int/heartbeat'},
 { 'name': 'Purchase Finder', 'url': 'pe-non-prchsfndr-app-active-ext/heartbeat'},
 { 'name': 'Psychic App', 'url': 'pe-non-psychic-app-active-int/heartbeat'},
@@ -248,7 +248,7 @@ west_applicationversion = [
     { 'name': 'Visitor Graph', 'url': 'pw-bro-vgraph-api-active-int/heartbeat' },
     { 'name': 'ZK Agent', 'url': 'pw-bro-zkagent-svc-active-int/zk-agent/heartbeat' },
     { 'name': 'Product Fulfillment(Profulfil)', 'url': 'pw-bro-profulfil-web-active-ext/productfulfillment/heartbeat' },
-    { 'name': 'CSI', 'url': 'pw-csi-web-active-ext/api/csiservice/heartbeat'},
+    #{ 'name': 'CSI', 'url': 'pw-csi-web-active-ext/api/csiservice/heartbeat'},
     { 'name': 'Customer-Graph', 'url': 'pw-rpi-cgraph-app-active-int/heartbeat'},
     { 'name': 'Purchase Finder', 'url': 'pw-non-prchsfndr-app-active-ext/heartbeat'},
     { 'name': 'Psychic App', 'url': 'pw-non-psychic-app-active-int/heartbeat'},
@@ -295,39 +295,39 @@ west_scp = [
 ]
 
 def curl_version(data):
-    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
+    response = requests.post('https://monitoring.bestbuy.com/', data=data)
     jdata = json.loads(response.text)
     return (jdata['applicationVersion'])
 
 
 def curl_version2(data):
-    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
+    response = requests.post('https://monitoring.bestbuy.com/', data=data)
     # print (response.text)
     jdata = json.loads(response.text)
     # print (jdata)
     return (jdata['version'])
 
 def curl_version3(data):
-    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
+    response = requests.post('https://monitoring.bestbuy.com/', data=data)
     jdata = json.loads(response.text)
     return (jdata['Version'])
 
 def curl_version4(data):
-    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
+    response = requests.post('https://monitoring.bestbuy.com/', data=data)
     return (response.text)
     # jdata = json.loads(response.text)
     # print (jdata)
     # return (jdata['Cargo-Shipping Version'])
 
 def curl_version5(data):
-    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
+    response = requests.post('https://monitoring.bestbuy.com/', data=data)
     # print (response.text)
     jdata = json.loads(response.text)
     next = jdata.get("system.properties")
     return (next['bby.scp.version'])
 
 def curl_version6(data):
-    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
+    response = requests.post('https://monitoring.bestbuy.com/', data=data)
         # print (response.text)
     jdata = json.loads(response.text)
     next = jdata.get("status")
