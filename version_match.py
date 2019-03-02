@@ -295,39 +295,39 @@ west_scp = [
 ]
 
 def curl_version(data):
-    response = requests.post('https://monitoring.bestbuy.com/', data=data)
+    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
     jdata = json.loads(response.text)
     return (jdata['applicationVersion'])
 
 
 def curl_version2(data):
-    response = requests.post('https://monitoring.bestbuy.com/', data=data)
+    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
     # print (response.text)
     jdata = json.loads(response.text)
     # print (jdata)
     return (jdata['version'])
 
 def curl_version3(data):
-    response = requests.post('https://monitoring.bestbuy.com/', data=data)
+    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
     jdata = json.loads(response.text)
     return (jdata['Version'])
 
 def curl_version4(data):
-    response = requests.post('https://monitoring.bestbuy.com/', data=data)
+    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
     return (response.text)
     # jdata = json.loads(response.text)
     # print (jdata)
     # return (jdata['Cargo-Shipping Version'])
 
 def curl_version5(data):
-    response = requests.post('https://monitoring.bestbuy.com/', data=data)
+    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
     # print (response.text)
     jdata = json.loads(response.text)
     next = jdata.get("system.properties")
     return (next['bby.scp.version'])
 
 def curl_version6(data):
-    response = requests.post('https://monitoring.bestbuy.com/', data=data)
+    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
         # print (response.text)
     jdata = json.loads(response.text)
     next = jdata.get("status")
