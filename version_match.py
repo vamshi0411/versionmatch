@@ -76,9 +76,7 @@ east_applicationversion = [
 { 'name': 'Plprofile-app', 'url': 'pe-non-plprofile-app-active-int/heartbeat' },
 { 'name': 'Qnaview-njs', 'url': 'pe-non-qnaview-njs-active-int/heartbeat' },
 { 'name': 'Wrangler(porerelag)', 'url': 'pe-non-prorelagg-app-active-int/heartbeat' },
-{ 'name': 'SCDS-API', 'url': 'pe-bro-scdsapi-app
-
--active-int/heartbeat' },
+{ 'name': 'SCDS-API', 'url': 'pe-bro-scdsapi-app-active-int/heartbeat' },
 { 'name': 'STS Internal', 'url': 'pe-non-sctksrint-app-active-int/heartbeat' },
 { 'name': 'Psychic-app', 'url': 'pe-non-psychic-app-active-int/heartbeat' },
 { 'name': 'Search-Api', 'url': 'pe-non-searchapi-app-active-int/heartbeat' },
