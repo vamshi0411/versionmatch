@@ -270,7 +270,7 @@ west_status = [
  ]
 
 west_Version = [
- { 'name': 'Search Master', 'url': 'pw-search-master-active-int/search-api/health' },
+ # { 'name': 'Search Master', 'url': 'pw-search-master-active-int/search-api/health' },
  # { 'name': 'Search Repeater', 'url': 'pw-search-repeater-active-int/search-api/health' },
  # { 'name': 'Search SAAS', 'url': 'pw-search-saas-active-int/search-api/health' }
 ]
