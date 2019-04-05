@@ -108,11 +108,11 @@ east_applicationversion = [
 { 'name': 'UGC Api', 'url': 'pe-non-ugcapi-app-active-int/heartbeat' },
 { 'name': 'TTSgifting-app', 'url': 'pe-cde-ttsgifting-app-active-int/heartbeat'},
 { 'name': 'TTSgifting-Njs', 'url': 'pe-cde-ttsgifting-njs-active-ext/heartbeat'},
-{ 'name': 'TRS', 'url': 'pe-non-trnrsksrv-app-active-int/heartbeat'}
+{ 'name': 'TRS', 'url': 'pe-non-trnrsksrv-app-active-int/heartbeat'},
+{ 'name': 'Product Fulfillment(Profulfil)', 'url': 'pe-bro-profulfil-web-active-ext/productfulfillment/heartbeat' }
             ]
 
 east_version = [
- { 'name': 'Product Fulfillment(Profulfil)', 'url': 'pe-bro-profulfil-web-active-ext/productfulfillment/heartbeat' },
  { 'name': 'Plunger', 'url': 'pe-browse-plunger-active-ext/plunger/health_check' },
  {'name': 'Affcom Njs', 'url': 'pe-non-affcomm-njs-active-int/heartbeat' }
 ]
@@ -255,11 +255,11 @@ west_applicationversion = [
     { 'name': 'RNRView App', 'url': 'pw-non-rnrview-njs-active-int/heartbeat'},
     { 'name': 'TTSgifting-app', 'url': 'pw-cde-ttsgifting-app-active-int/heartbeat'},
     { 'name': 'TTSgifting-Njs', 'url': 'pw-cde-ttsgifting-njs-active-ext/heartbeat'},
-    { 'name': 'TRS', 'url': 'pw-non-trnrsksrv-app-active-int/heartbeat'}
+    { 'name': 'TRS', 'url': 'pw-non-trnrsksrv-app-active-int/heartbeat'},
+    { 'name': 'Product Fulfillment(Profulfil)', 'url': 'pw-bro-profulfil-web-active-ext/productfulfillment/heartbeat' }
     ]
 
 west_version = [
- { 'name': 'Product Fulfillment(Profulfil)', 'url': 'pw-bro-profulfil-web-active-ext/productfulfillment/heartbeat' },
  # { 'name': 'Plunger', 'url': 'pw-browse-plunger-active-ext/plunger/health_check' }
  # {'name': 'Affcom Njs', 'url': 'pw-non-affcomm-njs-active-int/heartbeat' }
  ]
@@ -368,16 +368,16 @@ for each in east_applicationversion:
 #             # print ("apps are not same")
 #             # print ((curl_version(each['url'])), (curl_version(each1['url'])), each['name'], each1['name'])
 
-for each in east_version:
-    for each1 in west_version:
-        if (each['name']) == (each1['name']):
-            if (curl_version2(each['url'])) == (curl_version2(each1['url'])):
-                print (each['name'], (curl_version2(each['url'])))
-            else:
-                # print ("versions are not same")
-                print (each['name'] + " east version is " + (curl_version2(each['url'])) + " and west version is " + (curl_version2(each1['url'])))
-                count += 1
-                send_status_to_hipchat(each['name'] + " east version is " + (curl_version2(each['url'])) + " and west version is " + (curl_version2(each1['url'])), "red")
+# for each in east_version:
+#     for each1 in west_version:
+#         if (each['name']) == (each1['name']):
+#             if (curl_version2(each['url'])) == (curl_version2(each1['url'])):
+#                 print (each['name'], (curl_version2(each['url'])))
+#             else:
+#                 # print ("versions are not same")
+#                 print (each['name'] + " east version is " + (curl_version2(each['url'])) + " and west version is " + (curl_version2(each1['url'])))
+#                 count += 1
+#                 send_status_to_hipchat(each['name'] + " east version is " + (curl_version2(each['url'])) + " and west version is " + (curl_version2(each1['url'])), "red")
         # else:
             # print ("apps are not same")
             # print ((curl_version(each['url'])), (curl_version(each1['url'])), each['name'], each1['name'])
