@@ -339,9 +339,9 @@ with open('east.json') as json_file:
                          print (each, (curl_version(data1[each])))
                      else:
                          # print (each, (curl_version(data1[each])), (curl_version(data2[each1])))
-                        print (each['name'] + " east version is " + (curl_version(each['url'])) + " and west version is " + (curl_version(each1['url'])))
+                        print (each + " east version is " + (curl_version(data1['each'])) + " and west version is " + (curl_version(each1['url'])))
                         count += 1
-                        send_status_to_hipchat(each['name'] + " east version is " + (curl_version(each['url'])) + " and west version is " + (curl_version(each1['url'])), "red")
+                        send_status_to_hipchat(each['name'] + " east version is " + (curl_version(data['each'])) + " and west version is " + (curl_version(data2['each1'])), "red")
 
 
 for each in east_cargo:
