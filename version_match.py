@@ -112,28 +112,18 @@ east_applicationversion = [
 { 'name': 'Product Fulfillment(Profulfil)', 'url': 'pe-bro-profulfil-web-active-ext/productfulfillment/heartbeat' }
             ]
 
-east_version = [
- { 'name': 'Plunger', 'url': 'pe-browse-plunger-active-ext/plunger/health_check' },
- {'name': 'Affcom Njs', 'url': 'pe-non-affcomm-njs-active-int/heartbeat' }
-]
+
 
 east_status = [
   { 'name': 'Plunger', 'url': 'pe-browse-plunger-active-ext/plunger/health_check' }
- # {'name': 'Affcom Njs', 'url': 'pw-non-affcomm-njs-active-int/heartbeat' }
  ]
 
-east_Version = [
- { 'name': 'Search Master', 'url': 'pe-search-master-active-int/search-api/health' },
- { 'name': 'Search Repeater', 'url': 'pe-search-repeater-active-int/search-api/health' },
- { 'name': 'Search SAAS', 'url': 'pe-search-saas-active-int/search-api/health' }
-]
+
 
 east_cargo = [
  { 'name': 'cargo-app', 'url': 'pe-bro-cargo-api-active-int/shipping-webapp/api/heartbeat' },
  { 'name': 'CBA', 'url': 'pe-browse-web-vpc-active-int/heartbeat' },
  { 'name': 'Panda', 'url': 'pe-browse-panda-active-ext/heartbeat' }
- # { 'name': 'Search Repeater', 'url': 'pe-search-repeater-active-int/search-api/health' },
- # { 'name': 'Search SAAS', 'url': 'pe-search-saas-active-int/search-api/health' }
 ]
 
 east_scp = [
@@ -143,8 +133,6 @@ east_scp = [
  { 'name': 'Suggestcld-slr', 'url': 'pe-non-sggestcld-slr-active-int/solr/admin/info/properties?wt=json' },
  { 'name': 'VPT-slr', 'url': 'pe-non-vpt-slr-active-int/solr/admin/info/properties?wt=json' },
  { 'name': 'UGC-slr', 'url': 'pe-bro-ugc-slr-active-int/solr/admin/info/properties?wt=json' }
- # { 'name': 'Search Repeater', 'url': 'pe-search-repeater-active-int/search-api/health' },
- # { 'name': 'Search SAAS', 'url': 'pe-search-saas-active-int/search-api/health' }
 ]
 
 
@@ -259,28 +247,18 @@ west_applicationversion = [
     { 'name': 'Product Fulfillment(Profulfil)', 'url': 'pw-bro-profulfil-web-active-ext/productfulfillment/heartbeat' }
     ]
 
-west_version = [
- # { 'name': 'Plunger', 'url': 'pw-browse-plunger-active-ext/plunger/health_check' }
- # {'name': 'Affcom Njs', 'url': 'pw-non-affcomm-njs-active-int/heartbeat' }
- ]
+
 
 west_status = [
   { 'name': 'Plunger', 'url': 'pw-browse-plunger-active-ext/plunger/health_check' }
- # {'name': 'Affcom Njs', 'url': 'pw-non-affcomm-njs-active-int/heartbeat' }
  ]
 
-west_Version = [
- # { 'name': 'Search Master', 'url': 'pw-search-master-active-int/search-api/health' },
- # { 'name': 'Search Repeater', 'url': 'pw-search-repeater-active-int/search-api/health' },
- # { 'name': 'Search SAAS', 'url': 'pw-search-saas-active-int/search-api/health' }
-]
+
 
 west_cargo = [
  { 'name': 'cargo-app', 'url': 'pw-bro-cargo-api-active-int/shipping-webapp/api/heartbeat' },
  { 'name': 'CBA', 'url': 'pe-browse-web-vpc-active-int/heartbeat' },
  { 'name': 'Panda', 'url': 'pw-browse-panda-active-ext/heartbeat' }
- # { 'name': 'Search Repeater', 'url': 'pe-search-repeater-active-int/search-api/health' },
- # { 'name': 'Search SAAS', 'url': 'pe-search-saas-active-int/search-api/health' }
 ]
 
 west_scp = [
@@ -290,8 +268,6 @@ west_scp = [
  { 'name': 'UGC-slr', 'url': 'pw-bro-ugc-slr-active-int/solr/admin/info/properties?wt=json' },
  { 'name': 'VPT-slr', 'url': 'pw-non-vpt-slr-active-int/solr/admin/info/properties?wt=json' },
  { 'name': 'Suggestcld-slr', 'url': 'pw-non-sggestcld-slr-active-int/solr/admin/info/properties?wt=json' }
- # { 'name': 'Search Repeater', 'url': 'pe-search-repeater-active-int/search-api/health' },
- # { 'name': 'Search SAAS', 'url': 'pe-search-saas-active-int/search-api/health' }
 ]
 
 def curl_version(data):
@@ -307,10 +283,6 @@ def curl_version2(data):
     # print (jdata)
     return (jdata['version'])
 
-def curl_version3(data):
-    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
-    jdata = json.loads(response.text)
-    return (jdata['Version'])
 
 def curl_version4(data):
     response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
@@ -354,44 +326,23 @@ def send_status_to_hipchat(message,color):
 
 
 count = 0
-for each in east_applicationversion:
-    for each1 in west_applicationversion:
-        if (each['name']) == (each1['name']):
-            if (curl_version(each['url'])) == (curl_version(each1['url'])):
-                print (each['name'], (curl_version(each['url'])))
-            else:
-                # print ("versions are not same")
-                print (each['name'] + " east version is " + (curl_version(each['url'])) + " and west version is " + (curl_version(each1['url'])))
-                count += 1
-                send_status_to_hipchat(each['name'] + " east version is " + (curl_version(each['url'])) + " and west version is " + (curl_version(each1['url'])), "red")
-#         else:
-#             # print ("apps are not same")
-#             # print ((curl_version(each['url'])), (curl_version(each1['url'])), each['name'], each1['name'])
+with open('east.json') as json_file:
+    data1 = json.load(json_file)
+    # print (data1)
+    with open('west.json') as json_file2:
+         data2 = json.load(json_file2)
+         for each in data1:
+             for each1 in data2:
+                 if (each) == (each1):
+                     print each
+                     if (curl_version(data1[each])) == (curl_version(data2[each1])):
+                         print (each, (curl_version(data1[each])))
+                     else:
+                         # print (each, (curl_version(data1[each])), (curl_version(data2[each1])))
+                        print (each['name'] + " east version is " + (curl_version(each['url'])) + " and west version is " + (curl_version(each1['url'])))
+                        count += 1
+                        send_status_to_hipchat(each['name'] + " east version is " + (curl_version(each['url'])) + " and west version is " + (curl_version(each1['url'])), "red")
 
-# for each in east_version:
-#     for each1 in west_version:
-#         if (each['name']) == (each1['name']):
-#             if (curl_version2(each['url'])) == (curl_version2(each1['url'])):
-#                 print (each['name'], (curl_version2(each['url'])))
-#             else:
-#                 # print ("versions are not same")
-#                 print (each['name'] + " east version is " + (curl_version2(each['url'])) + " and west version is " + (curl_version2(each1['url'])))
-#                 count += 1
-#                 send_status_to_hipchat(each['name'] + " east version is " + (curl_version2(each['url'])) + " and west version is " + (curl_version2(each1['url'])), "red")
-        # else:
-            # print ("apps are not same")
-            # print ((curl_version(each['url'])), (curl_version(each1['url'])), each['name'], each1['name'])
-
-for each in east_Version:
-    for each1 in west_Version:
-        if (each['name']) == (each1['name']):
-            if (curl_version3(each['url'])) == (curl_version3(each1['url'])):
-                print (each['name'], (curl_version3(each['url'])))
-            else:
-                # print ("versions are not same")
-                print (each['name'] + " east version is " + (curl_version3(each['url'])) + " and west version is " + (curl_version3(each1['url'])))
-                count += 1
-                send_status_to_hipchat(each['name'] + " east version is " + (curl_version3(each['url'])) + " and west version is " + (curl_version3(each1['url'])), "red")
 
 for each in east_cargo:
     for each1 in west_cargo:
