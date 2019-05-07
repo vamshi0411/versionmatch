@@ -19,7 +19,7 @@
   "exc-slr": "pe-non-exc-slr-active-int/heartbeat",
   "cusoweb-njs": "pe-non-cusoweb-njs-active-int/heartbeat",
   "calligator-cloud": "pe-non-calligator-cloud-active-int/heartbeat",
-  "fulfview-njs": "pe-non-fulfview-njs-active-int/heartbeat",
+  "fulfview-njs": "pe-non-fulfview-njs-active-ext/heartbeat",
   "geeksquad-web": "pe-non-geeksquad-web-active-int/heartbeat",
   "magdelta-app": "pe-non-magdelta-app-active-int/heartbeat",
   "krakencld": "pe-non-krakencld-app-active-int/heartbeat",

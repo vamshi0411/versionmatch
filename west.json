@@ -19,7 +19,7 @@
   "exc-sl": "pw-non-exc-slr-active-int/heartbeat",
   "cusoweb-njs": "pw-non-cusoweb-njs-active-int/heartbeat",
   "calligator-clou": "pw-non-calligator-cloud-active-int/heartbeat",
-  "fulfview-njs": "pw-non-fulfview-njs-active-int/heartbeat",
+  "fulfview-njs": "pw-non-fulfview-njs-active-ext/heartbeat",
   "geeksquad-we": "pw-non-geeksquad-web-active-int/heartbeat",
   "magdelta-app": "pw-non-magdelta-app-active-int/heartbeat",
   "krakencld": "pw-non-krakencld-app-active-int/heartbeat",
