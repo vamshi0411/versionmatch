@@ -72,7 +72,7 @@ def send_status_to_hipchat(message,color):
         'message': message,
         'color': color,
         'message_format': 'text',
-        'notify': False,
+        'notify': True,
         'from': 'From Jenkins'})
     request = requests.post(url, headers=headers, data=datastr)
     print (request.text)
