@@ -128,7 +128,7 @@
   "suggest-app": "pw-non-suggest-app-active-int/heartbeat",
   "scds-ap": "pw-non-scdsapi-app-active-int/heartbeat",
   "cgraph-app": "pw-rpi-cgraph-app-active-int/heartbeat",
-  "profulfil-web": "pw-bro-profulfil-web-active-ext/productfulfillment/heartbeat",
+  "profulfil-we": "pw-bro-profulfil-web-active-ext/productfulfillment/heartbeat",
   "shipping-app": "pw-non-shipping-app-active-int/fulfillment/shipping/api/heartbeat",
   "trnsgraph-app": "pw-non-trnsgraph-app-active-int/heartbeat",
   "sercalendar-app": "pw-non-sercalendar-app-active-int/heartbeat",
