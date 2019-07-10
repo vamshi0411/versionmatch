@@ -18,7 +18,8 @@ east_scp = [
  { 'name': 'search-slr', 'url': 'pe-non-search-slr-active-int/solr/admin/info/properties?wt=json' },
  { 'name': 'Suggestcld-slr', 'url': 'pe-non-sggestcld-slr-active-int/solr/admin/info/properties?wt=json' },
  { 'name': 'VPT-slr', 'url': 'pe-non-vpt-slr-active-int/solr/admin/info/properties?wt=json' },
- { 'name': 'UGC-slr', 'url': 'pe-bro-ugc-slr-active-int/solr/admin/info/properties?wt=json' }
+ { 'name': 'UGC-slr', 'url': 'pe-bro-ugc-slr-active-int/solr/admin/info/properties?wt=json' },
+ { 'name': 'suggestv3-slr', 'url': 'pe-non-suggestv3-slr-active-int/solr/admin/info/properties?wt=json' }
 ]
 
 west_status = [
@@ -36,13 +37,14 @@ west_scp = [
  { 'name': 'search-slr', 'url': 'pw-non-search-slr-active-int/solr/admin/info/properties?wt=json' },
  { 'name': 'UGC-slr', 'url': 'pw-bro-ugc-slr-active-int/solr/admin/info/properties?wt=json' },
  { 'name': 'VPT-slr', 'url': 'pw-non-vpt-slr-active-int/solr/admin/info/properties?wt=json' },
- { 'name': 'Suggestcld-slr', 'url': 'pw-non-sggestcld-slr-active-int/solr/admin/info/properties?wt=json' }
+ { 'name': 'Suggestcld-slr', 'url': 'pw-non-sggestcld-slr-active-int/solr/admin/info/properties?wt=json' },
+ { 'name': 'suggestv3-slr', 'url': 'pw-non-suggestv3-slr-active-int/solr/admin/info/properties?wt=json' }
 ]
 
 def curl_version(data):
-    response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
-    jdata = json.loads(response.text)
-    return (jdata['applicationVersion'])
+     response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
+     jdata = json.loads(response.text)
+     return (jdata['applicationVersion'])
 
 def curl_version4(data):
     response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
@@ -62,22 +64,22 @@ def curl_version6(data):
 
 
 def send_status_to_hipchat(message,color):
-    room_id_real = sys.argv[1]
-    auth_token_real = sys.argv[2]
-    url = 'https://hipchat.bestbuy.com/v2/room/'+room_id_real+'/notification'
-    headers = {
-        "content-type": "application/json",
-        "authorization": "Bearer %s" % auth_token_real}
-    datastr = json.dumps({
-        'message': message,
-        'color': color,
-        'message_format': 'text',
-        'notify': True,
-        'from': 'From Jenkins'})
-    request = requests.post(url, headers=headers, data=datastr)
-    print (request.text)
-    print ("posted to hipchat", message, color)
-    return request.status_code
+    # room_id_real = sys.argv[1]
+    # auth_token_real = sys.argv[2]
+    # url = 'https://hipchat.bestbuy.com/v2/room/'+room_id_real+'/notification'
+    # headers = {
+    #     "content-type": "application/json",
+    #     "authorization": "Bearer %s" % auth_token_real}
+    # datastr = json.dumps({
+    #     'message': message,
+    #     'color': color,
+    #     'message_format': 'text',
+    #     'notify': True,
+    #     'from': 'From Jenkins'})
+    # request = requests.post(url, headers=headers, data=datastr)
+    # print (request.text)
+    # print ("posted to hipchat", message, color)
+    # return request.status_code
     print ("from hichat")
 
 
