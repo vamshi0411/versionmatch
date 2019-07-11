@@ -156,4 +156,4 @@ def check_app(appname):
 if not ( os.system("git status --porcelain") ):
     os.system("git add .")
     os.system("git commit -m 'updating new urls' ")
-    os.system("git push -u origin master")
+    os.system("git push https://vamshi0411:cricket18@github.com/vamshi0411/versionmatch.git origin master")
