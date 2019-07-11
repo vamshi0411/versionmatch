@@ -151,6 +151,7 @@ def check_app(appname):
 #                             check_app(each1['name'])
 
 
+
 # if ( `git status --porcelain` ):
 #     print "commiting"
 if not ( os.system("git status --porcelain") ):
