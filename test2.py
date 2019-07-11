@@ -5,6 +5,7 @@ import json
 import re
 import sys
 
+
 def curl_version(data):
     response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
     if 'applicationVersion' in response.text:
