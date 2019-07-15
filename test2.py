@@ -119,36 +119,27 @@ def check_app(appname):
     #     json.dump(content, fout, indent=1)
     # print (stringJson.txt)
 
-# list_apps()
-#
-# # suffix = "-os"
-# # suffix2 = "-dc"
-# # suffix3 = "-ami"
-# # suffix4 = "-preview"
-# # suffix5 = "-boxes"
-# # suffix6 = "-frontend"
-# # suffix7 = "-jobs"
-# # prefix = "skeletor"
-#
-# with open('browse.json') as json_file:
-#     data1 = json.load(json_file)
-#     # for each1 in data1['items']:
-#     #      print each1['name']
-#     with open('list3.json') as json_file2:
-#          data2 = json.load(json_file2)
-#          for each1 in data1['items']:
-#                    count = 0
-#                    for each in data2:
-#                        if (each1['name']) == (each):
-#                            count = count + 1
-#                        else:
-#                            continue
-#                            # print each
-#                    if count == 0:
-#                        if not ( each1['name'].startswith(('skeletor')) or each1['name'].endswith(('-os', '-dc', '-ami', '-preview', '-boxes', '-frontend', '-jobs')) ):
-#                        # or each1['name'].endswith(suffix2) or each1['name'].endswith(suffix3) or each1['name'].endswith(suffix4) or each1['name'].endswith(suffix5) or each1['name'].endswith(suffix6) or each1['name'].endswith(suffix7)):
-#                             print each1['name']
-#                             check_app(each1['name'])
+list_apps()
+
+with open('browse.json') as json_file:
+    data1 = json.load(json_file)
+    # for each1 in data1['items']:
+    #      print each1['name']
+    with open('list3.json') as json_file2:
+         data2 = json.load(json_file2)
+         for each1 in data1['items']:
+                   count = 0
+                   for each in data2:
+                       if (each1['name']) == (each):
+                           count = count + 1
+                       else:
+                           continue
+                           # print each
+                   if count == 0:
+                       if not ( each1['name'].startswith(('skeletor')) or each1['name'].endswith(('-os', '-dc', '-ami', '-preview', '-boxes', '-frontend', '-jobs')) ):
+                       # or each1['name'].endswith(suffix2) or each1['name'].endswith(suffix3) or each1['name'].endswith(suffix4) or each1['name'].endswith(suffix5) or each1['name'].endswith(suffix6) or each1['name'].endswith(suffix7)):
+                            print each1['name']
+                            check_app(each1['name'])
 
 
 
