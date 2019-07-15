@@ -87,18 +87,18 @@ def check_app(appname):
 
     # with open('list.json', mode='w') as f:
     #     json.dump([], f)
-    with open('list2.json') as feedsjson:
+    with open('west.json') as feedsjson:
         feeds_west = json.load(feedsjson)
     west_applicationversion = {appname: west_url}
     feeds_west.update(west_applicationversion)
-    with open('list2.json', mode='w') as f:
+    with open('west.json', mode='w') as f:
         json.dump(feeds_west, f)
 
-    with open('list3.json') as feedsjson:
+    with open('east.json') as feedsjson:
         feeds_east = json.load(feedsjson)
     east_applicationversion = {appname: east_url}
     feeds_east.update(east_applicationversion)
-    with open('list3.json', mode='w') as f:
+    with open('east.json', mode='w') as f:
         json.dump(feeds_east, f)
     print "url updated"
 
@@ -125,7 +125,7 @@ with open('browse.json') as json_file:
     data1 = json.load(json_file)
     # for each1 in data1['items']:
     #      print each1['name']
-    with open('list3.json') as json_file2:
+    with open('east.json') as json_file2:
          data2 = json.load(json_file2)
          for each1 in data1['items']:
                    count = 0
