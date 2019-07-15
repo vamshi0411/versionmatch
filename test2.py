@@ -152,11 +152,8 @@ def check_app(appname):
 
 
 
-# if ( `git status --porcelain` ):
-#     print "commiting"
-# if not ( os.system("git status --porcelain") ):
-    # os.system("git add .")
-    # os.system("git commit -m 'updating new urls' ")
-    # os.system("git push https://vamshi0411:cricket18@github.com/vamshi0411/versionmatch.git --all")
-test = os.system("git status --porcelain")
-print test
+
+os.system("git status --porcelain")
+os.system("git add .")
+os.system("git commit -m 'updating new urls' ")
+os.system("git push https://vamshi0411:cricket18@github.com/vamshi0411/versionmatch.git --all")
