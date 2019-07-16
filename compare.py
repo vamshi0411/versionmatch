@@ -6,8 +6,8 @@ import re
 import sys
 
 Token = sys.argv[1]
-# username = sys.argv[2]
-# password = sys.argv[3]
+username = sys.argv[2]
+password = sys.argv[3]
 
 def curl_version(data):
     response = requests.post('https://dashboard-service-canaryautomation-canary.omnitank.bestbuy.com/dashboardservice/data/prodheartbeat', data=data)
@@ -151,4 +151,4 @@ os.system("git status --porcelain")
 os.system("git add .")
 os.system("git commit -m 'updating new urls' ")
 # git_url = https://+:cricket18@github.com/vamshi0411/versionmatch.git
-os.system("git push https://%s:%s@github.com/vamshi0411/versionmatch.git --all" % ('sys.argv[2]','sys.argv[3]'))
+os.system("git push https://%s:%s@github.com/vamshi0411/versionmatch.git --all" % (sys.argv[2],sys.argv[3]))
