@@ -17,7 +17,6 @@ def curl_version(data):
         return False
 
 def list_apps():
-    # Token= '5e7a3dfd0445233521e98badf164d2aff52c4e433479b352e8402d099eff61f7'
     url = 'https://imr.monitoring.bestbuy.com/api/applications'
     headers = {
         "content-type": "application/json",
@@ -30,8 +29,6 @@ def list_apps():
     print "done writing"
 
 def check_app(appname):
-    # appname = 'cgraph-app'
-    # Token= '5e7a3dfd0445233521e98badf164d2aff52c4e433479b352e8402d099eff61f7'
     url = 'https://imr.monitoring.bestbuy.com/api/configuration/environments/prod/applications/'+appname
     headers = {
         "content-type": "application/json",
@@ -122,27 +119,27 @@ def check_app(appname):
     #     json.dump(content, fout, indent=1)
     # print (stringJson.txt)
 
-# list_apps()
-#
-# with open('browse.json') as json_file:
-#     data1 = json.load(json_file)
-#     # for each1 in data1['items']:
-#     #      print each1['name']
-#     with open('east.json') as json_file2:
-#          data2 = json.load(json_file2)
-#          for each1 in data1['items']:
-#                    count = 0
-#                    for each in data2:
-#                        if (each1['name']) == (each):
-#                            count = count + 1
-#                        else:
-#                            continue
-#                            # print each
-#                    if count == 0:
-#                        if not ( each1['name'].startswith(('skeletor')) or each1['name'].endswith(('-os', '-dc', '-ami', '-preview', '-boxes', '-frontend', '-jobs')) ):
-#                        # or each1['name'].endswith(suffix2) or each1['name'].endswith(suffix3) or each1['name'].endswith(suffix4) or each1['name'].endswith(suffix5) or each1['name'].endswith(suffix6) or each1['name'].endswith(suffix7)):
-#                             print each1['name']
-#                             check_app(each1['name'])
+list_apps()
+
+with open('browse.json') as json_file:
+    data1 = json.load(json_file)
+    # for each1 in data1['items']:
+    #      print each1['name']
+    with open('east.json') as json_file2:
+         data2 = json.load(json_file2)
+         for each1 in data1['items']:
+                   count = 0
+                   for each in data2:
+                       if (each1['name']) == (each):
+                           count = count + 1
+                       else:
+                           continue
+                           # print each
+                   if count == 0:
+                       if not ( each1['name'].startswith(('skeletor')) or each1['name'].endswith(('-os', '-dc', '-ami', '-preview', '-boxes', '-frontend', '-jobs')) ):
+                       # or each1['name'].endswith(suffix2) or each1['name'].endswith(suffix3) or each1['name'].endswith(suffix4) or each1['name'].endswith(suffix5) or each1['name'].endswith(suffix6) or each1['name'].endswith(suffix7)):
+                            print each1['name']
+                            check_app(each1['name'])
 
 
 
@@ -150,5 +147,4 @@ def check_app(appname):
 os.system("git status --porcelain")
 os.system("git add .")
 os.system("git commit -m 'updating new urls' ")
-# git_url = https://+:cricket18@github.com/vamshi0411/versionmatch.git
 os.system("git push https://%s:%s@github.com/vamshi0411/versionmatch.git --all" % (sys.argv[2],sys.argv[3]))
